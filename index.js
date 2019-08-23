@@ -23,20 +23,21 @@ class Solution {
     loser.losses += 1;
   };
 
-  // Tally up most wins to determine winner
+  // Tally up most wins and sort to determine winner
   result = () => {
     let maxCount = 0;
-    // let winner = null;
+    let winner = null;
 
     for (let i = 0; i < candidates.length; i += 1) {
       if (candidates[i].wins > maxCount) {
         maxCount = candidates[i].wins;
-        // winner = candidates[i].name;
+        winner = candidates[i].name;
       }
     }
 
+    // Sort candidates by most win record
     candidates.sort((a, b) => (a.wins > b.wins ? -1 : 1));
-    // console.log(winner);
+    console.log('Winner: ' + winner);
     console.log(candidates);
   };
 }
